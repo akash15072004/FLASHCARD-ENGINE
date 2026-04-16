@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcard Engine — Smart Spaced Repetition Learning</title>
+    <meta name="description" content="Transform PDFs into intelligent flashcards with AI-powered generation and SM-2 spaced repetition algorithm for optimal learning." />
+    <meta name="author" content="Flashcard Engine" />
+
+    <meta property="og:title" content="Flashcard Engine" />
+    <meta property="og:description" content="Smart flashcard app with AI card generation and spaced repetition learning" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>" />
+
+    <style>
+      .watermark {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        font-size: 40px;
+        color: rgba(0, 0, 0, 0.08);
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Watermark -->
+    <div class="watermark">Akash Chaudhary</div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
