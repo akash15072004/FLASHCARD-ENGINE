@@ -20,14 +20,15 @@ except Exception as e:
     print(f"Warning: Could not mount uploads directory: {e}")
 
 
-
+allow_origins=[
+    "https://flashcard-engine-steel.vercel.app"
+],
+allow_credentials=True,
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8081",
-        "http://localhost:3000",
-        "https://flashcard-engine-steel.vercel.app/"
-    ],
+   allow_origins=[
+    "https://flashcard-engine-steel.vercel.app"
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
