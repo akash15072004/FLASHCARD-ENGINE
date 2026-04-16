@@ -1,239 +1,156 @@
-# 🧠 Flashcard Engine
+# 🎥 Video Walkthrough Script - Flashcard Engine
 
-An intelligent flashcard application that transforms PDFs into comprehensive study decks using AI, with spaced repetition and progress tracking.
-
----
-
-## 👨‍💻 Developed By
-
-**Akash Chaudhary**
-🎓 B.Tech Final Year (Information Technology)
-💻 Full Stack Developer | React | FastAPI | AI Enthusiast
+**Total Duration: 4-5 minutes**
 
 ---
 
-## ✨ Features
+## 🎬 INTRO (0:00 - 0:30)
 
-### 🎯 Core Functionality
+"Hi! I'm **Akash Chaudhary**, a final-year B.Tech IT student.
 
-* **PDF to Flashcards**: Upload any PDF and automatically generate flashcards
-* **AI-Powered Generation**: Uses Groq API for smart question-answer creation
-* **Spaced Repetition**: SM-2 algorithm schedules reviews efficiently
-* **Active Recall**: Type your answer before revealing the solution
-* **Time-Based Analytics**: Measures response time for better learning
+For the Cuemath AI Builder Challenge, I chose Problem 1: The Flashcard Engine.
 
----
+The goal was not just to convert PDFs into flashcards, but to build a complete intelligent learning system using AI and spaced repetition.
 
-### 📊 Progress Tracking
-
-* **Mastery Dashboard**: Track learning stages (New → Learning → Review → Mastered)
-* **Streak Counter**: Maintain daily study consistency 🔥
-* **Weak Areas Detection**: Focus on topics needing improvement
-* **Activity Charts**: Visualize progress over time
-* **Performance Insights**: Identify strong and weak concepts
+Let me walk you through what I’ve built."
 
 ---
 
-### 🎨 User Experience
+## 📱 DEMO PART 1: The User Experience (0:30 - 2:30)
 
-* **Simple Feedback System**: Hard / Medium / Easy
-* **Dark Mode Support**
-* **Real-time Search**
-* **Responsive Design**
-* **Smooth Animations**
+### Registration & Dashboard
 
----
+"First, let’s create an account."
 
-## 🚀 Quick Start
-
-### 📌 Prerequisites
-
-* Python 3.10+
-* Node.js 16+
-* Groq API Key
+"And we’re in! This is the dashboard where users can track their progress and manage decks."
 
 ---
 
-## ⚙️ Local Development
+### Creating a Deck & Uploading PDF
+
+"I’ll create a new deck and upload a PDF."
+
+"This can be any study material — textbooks, notes, or research papers."
+
+"Now let’s generate flashcards using AI."
 
 ---
 
-### 🔹 Backend Setup (FastAPI)
+### Card Generation Results
 
-```bash
-cd backend
+"Flashcards are generated successfully.
 
-# Create virtual environment
-python -m venv .venv
-.venv\Scripts\activate   # Windows
+Here’s what makes it powerful:
 
-# Install minimal dependencies (recommended)
-pip install fastapi uvicorn python-multipart
+* I implemented a RAG-based system
+* It splits content intelligently using semantic chunking
+* Maintains context using overlapping chunks
+* Generates high-quality questions covering concepts and examples
 
-# Run server
-python -m uvicorn main:app --reload --port 8000
-```
-
-👉 Backend: http://localhost:8000
+So instead of random cards, we get meaningful learning content."
 
 ---
 
-### 🔹 Frontend Setup (Vite + React)
+### Studying Cards
 
-```bash
-cd frontend
+"Now let’s start studying."
 
-npm install
-npm run dev
-```
+"I can either flip directly or try answering first for active recall."
 
-👉 Frontend: http://localhost:5173
+"This improves retention significantly."
 
----
+"Now here’s the key innovation — time tracking."
 
-## 🔑 Environment Variables
+"The system tracks how long I take to answer and suggests difficulty automatically."
 
-Create `.env` inside backend:
+* Under 8 seconds → Easy
+* 8–25 seconds → Medium
+* Above 25 seconds → Hard
 
-```
-GROQ_API_KEY=your_api_key
-JWT_SECRET=your_secret
-```
+"This removes guesswork and makes learning data-driven."
 
 ---
 
-## 🔧 Important Fixes (Based on Real Setup Issues)
+## 📊 DEMO PART 2: Progress & Analytics (2:30 - 3:30)
 
-* ❌ Do NOT use `app/api/upload/route.ts` (Next.js only)
-* ✅ This project uses **Vite + FastAPI**
-* ⚠️ Install dependencies step-by-step (avoid heavy installs first)
-* ⚠️ Ensure backend is running before frontend (else "Failed to fetch")
+### Progress Dashboard
 
----
+"After studying, I can track my progress."
 
-## 🏗️ Architecture
-
-### 🔹 Backend
-
-* FastAPI
-* SQLAlchemy
-* SQLite
-* Groq API (LLM)
-* PDF Processing
-
-### 🔹 Frontend
-
-* React + TypeScript
-* Vite
-* Tailwind CSS
-* Framer Motion
-* React Router
+"It shows mastery levels, streaks, weak areas, and activity charts."
 
 ---
 
-## 📁 Project Structure
+### Time Analytics
 
-```
-flashcard-engine/
-├── backend/
-│   ├── routes/
-│   ├── services/
-│   ├── models/
-│   ├── main.py
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── lib/
-│   │   └── App.tsx
-│   └── package.json
-│
-└── README.md
-```
+"This is my favorite feature."
+
+"Cards are categorized based on response time — fast, medium, slow."
+
+"This helps identify what I truly understand vs what needs practice."
 
 ---
 
-## 🔧 API Endpoints
+### UI Experience
 
-### Authentication
+"The app also includes multiple themes, smooth animations, and a clean UI."
 
-* POST `/auth/register`
-* POST `/auth/login`
-* GET `/auth/me`
-
-### Decks
-
-* GET `/decks`
-* POST `/decks`
-* GET `/decks/{id}`
-* DELETE `/decks/{id}`
-* POST `/decks/{id}/upload-pdf`
-* POST `/decks/{id}/generate`
-
-### Cards
-
-* GET `/cards/deck/{id}`
-* POST `/cards/{id}/rate`
+"It’s designed to make studying engaging and not boring."
 
 ---
 
-## 🧪 How It Works
+## 💻 DEMO PART 3: Technical Deep Dive (3:30 - 4:30)
 
-1. Upload PDF
-2. Extract text
-3. AI generates flashcards
-4. User reviews using spaced repetition
-5. System tracks progress & performance
+### Card Generation System
 
----
+"I improved card quality using better prompts and validation."
 
-## 🎯 Problem Statement
-
-This project solves:
-
-* Converting static PDFs into interactive learning
-* Improving retention using spaced repetition
-* Making study engaging with analytics and tracking
+"Each card goes through checks to avoid incomplete or low-quality content."
 
 ---
 
-## 📊 Results
+### RAG Engine
 
-* 🚀 Efficient flashcard generation using AI
-* 📈 Improved learning retention
-* 🧠 Smart difficulty tracking
-* ⏱️ Time-based performance insights
+"I implemented semantic chunking with overlap to maintain context."
 
----
-
-## 🔮 Future Enhancements
-
-* 📱 Mobile app
-* 🤝 Collaborative decks
-* 🎮 Gamification
-* 🧠 AI hints system
+"This ensures the AI generates meaningful and complete flashcards."
 
 ---
 
-## 📝 License
+### Spaced Repetition
 
-MIT License
+"I used the SM-2 algorithm, similar to Anki."
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
+"It schedules reviews intelligently based on performance."
 
 ---
 
-## 📬 Contact
+### Architecture
 
-📧 [akashchaudhary5100@gmail.com](mailto:akashchaudhary5100@gmail.com)
-📱 9140814285
+"The system is built using:
+
+* FastAPI for backend
+* React + TypeScript for frontend
+* Groq API for AI generation
+* SQLite / PostgreSQL for database
+
+The application is fully deployable and scalable."
 
 ---
 
-⭐ Built with ❤️ by Akash Chaudhary
+## 🚀 CONCLUSION (4:30 - 5:00)
+
+"So what makes this project special?
+
+1. High-quality AI-generated flashcards
+2. Active recall learning system
+3. Time-based performance tracking
+4. Smart difficulty suggestions
+5. Clean and engaging UI
+6. Proven spaced repetition algorithm
+
+This project demonstrates my ability to build a full-stack AI-powered application from scratch.
+
+With more time, I would add features like collaboration, mobile support, and gamification.
+
+Thank you for watching!"
