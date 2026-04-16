@@ -26,7 +26,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:8081",
         "http://localhost:3000",
-        "https://flashcard-engine-steel.vercel.app"
+        "https://flashcard-engine-steel.vercel.app/"
     ],
     allow_credentials=True,
     allow_methods=["*"],
