@@ -19,6 +19,17 @@ This project showcases my ability to design and develop an end-to-end system usi
 
 ---
 
+## 🌐 Live Demo
+
+### 🚀 Frontend (Vercel)
+👉 https://flashcard-engine-steel.vercel.app
+
+### ⚙️ Backend API (Render)
+👉 https://flashcard-engine-qflr.onrender.com
+
+### 📘 API Docs (Swagger)
+👉 https://flashcard-engine-qflr.onrender.com/docs
+
 ## ✨ Features
 
 ### 🎯 Core Functionality
@@ -120,7 +131,7 @@ Frontend will be available at `http://localhost:5173`
    * GROQ_API_KEY
    * JWT_SECRET
    * FRONTEND_URL
-
+  
 ---
 
 ### Frontend (Vercel)
